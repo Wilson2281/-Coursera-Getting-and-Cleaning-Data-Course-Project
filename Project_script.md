@@ -34,8 +34,11 @@ feature_test <- read.table(paste(sep="",rawDataDir,"./data/UCI HAR Dataset/test/
 ```
 **Create data**
 ```
-data_activity <- rbind(activity_train,activity_test)
+activity_labels <-read.tables(paste(sep="",rawDataDir,"./data/UCI HAR Dataset/activity_labels.txt"))
+feature_labels <-read.tables(paste(sep="",rawDataDir,"./data/UCI HAR Dataset/features.txt"))
+data_activity <- rbind(activity_labels, activity_train,activity_test)
 data_subject <- rbind(subject_train,subject_test)
-data_feature <- rbind(feature_train,feature_test)
+data_feature <- rbind(feature_labels, feature_train,feature_test)
 
 ```
+
